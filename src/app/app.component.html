@@ -1,0 +1,16 @@
+<div class="form-center">
+    <h2>user form</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitR()">
+        <input type="text" placeholder="Name" formControlName="fName">
+        <!-- <p> {{fName.value}}</p> -->
+        <br><br>
+        <input type="text" placeholder="Email" formControlName="email">
+        <!-- <p>{{email.value}}</p> -->
+        <br><br>
+        <textarea formControlName="address"></textarea>
+        <!-- <p>{{address.value}}</p> -->
+        <br><br>
+        <button>Submit</button>
+    </form>
+
+</div>
