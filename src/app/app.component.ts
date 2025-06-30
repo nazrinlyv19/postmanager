@@ -13,7 +13,12 @@ export class AppComponent {
    userForm =new FormGroup({
    fName: new FormControl('',[ Validators.required,Validators.minLength(3)]),
    email:new FormControl('',[Validators.required,Validators.email]),
-   address:new FormControl('', [Validators.required,Validators.minLength(10)]),
+   address:new FormGroup({
+    street:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    city:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    zipCode:new FormControl('',[Validators.required,Validators.minLength(3)]),
+    country:new FormControl('',[Validators.required,Validators.minLength(3)])
+   })
    });
 
    
