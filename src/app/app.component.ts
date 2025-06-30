@@ -11,9 +11,9 @@ import { FormsModule, FormControl, ReactiveFormsModule, FormGroup, Validator, Va
 export class AppComponent {
   title:string = 'blog-post-manager';
    userForm =new FormGroup({
-   fName: new FormControl('', Validators.required),
-   email:new FormControl(),
-   address:new FormControl(),
+   fName: new FormControl('',[ Validators.required,Validators.minLength(3)]),
+   email:new FormControl('',[Validators.required,Validators.email]),
+   address:new FormControl('', [Validators.required,Validators.minLength(10)]),
    });
 
    
