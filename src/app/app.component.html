@@ -1,4 +1,4 @@
-<div class="form-center">
+<!-- <div class="form-center">
     <h2>user form</h2>
     <form [formGroup]="userForm" (ngSubmit)="onSubmitR()">
         <input type="text" placeholder="Name" formControlName="fName">
@@ -19,7 +19,8 @@
             } }
         </div>
         <br><br>
-        <div formGroupName="address"> <textarea formControlName="street"></textarea>
+        <div formGroupName="address">
+            <textarea formControlName="street"></textarea>
             <div class="alert">
                 @if (userForm.get('address.street')?.touched && userForm.get('address.street')?.invalid) { @if (userForm.get('address.street')?.hasError('required')) {
                 <p>address is required</p>
@@ -31,32 +32,47 @@
             <input type="text" placeholder="City" formControlName="city">
             <div class="alert">
                 @if (userForm.get('address.city')?.touched && userForm.get('address.city')?.invalid) { @if (userForm.get('address.city')?.hasError('required')) {
-                <p>zip code is required</p>
+                <p>city is required</p>
                 } @if (userForm.get('address.city')?.hasError('minlength')) {
-                <p>zip code must be atleast 10 characters long </p>
+                <p>city must be atleast 3 characters long </p>
                 } }
             </div>
             <br><br>
             <input type="text" placeholder="Zip code" formControlName="zipCode">
             <div class="alert">
-                @if (userForm.get('address.zipCode')?.touched && userForm.get('address.zipCode')?.invalid) { @if (userForm.get('address')?.hasError('required')) {
+                @if (userForm.get('address.zipCode')?.touched && userForm.get('address.zipCode')?.invalid) { @if (userForm.get('address.zipCode')?.hasError('required')) {
                 <p>zip code is required</p>
                 } @if (userForm.get('address.zipCode')?.hasError('minlength')) {
-                <p>zip code must be atleast 10 characters long </p>
+                <p>zip code must be atleast 3 characters long </p>
                 } }
             </div>
             <br><br>
             <input type="text" placeholder="Country" formControlName="country">
             <div class="alert">
-                @if (userForm.get('address.country')?.touched && userForm.get('address.country')?.invalid) { @if (userForm.get('address')?.hasError('required')) {
-                <p>coumtry is required</p>
+                @if (userForm.get('address.country')?.touched && userForm.get('address.country')?.invalid) { @if (userForm.get('address.country')?.hasError('required')) {
+                <p>country is required</p>
                 } @if (userForm.get('address.country')?.hasError('minlength')) {
-                <p>country must be atleast 10 characters long </p>
+                <p>country must be atleast 3 characters long </p>
                 } }
             </div>
             <br><br></div>
 
+
+
+
+        <label for="">hobbies</label>
+        <br><br>
+        <input type="text" placeholder="hobbies" #hobbyInput (keyup.enter)="addHobby(hobbyInput.value)">
+        <br><br>
+
+        <ul>
+            @for (hobby of hobbiesArray.controls; track hobby) {
+            <li>{{hobby.value}}</li>
+            }
+
+        </ul>
+
         <button>Submit</button>
     </form>
 
-</div>
+</div> -->
