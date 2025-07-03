@@ -1,0 +1,69 @@
+.post-item {
+    background-color: #e6f2ff;
+    border-radius: 10px;
+    padding: 22px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.post-item:hover {
+    background-color: #e0e9f2;
+}
+
+.post-item strong {
+    font-size: 1.85rem;
+    color: #004085;
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 10px;
+}
+
+.post-item span {
+    font-size: 1.45rem;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.post-item small {
+    font-style: italic;
+    color: #666;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.post-item button {
+    background-color: #42bbd6;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin: 15px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+}
+
+.edt-btn:hover {
+    background-color: #2470b2 !important;
+}
+
+.dlt-btn {
+    background-color: #dc3545 !important;
+}
+
+.dlt-btn:hover {
+    background-color: #a71d2a !important;
+}
+
+.post-item hr {
+    margin-top: 25px;
+    border: none;
+    border-top: 1px solid #ccc;
+}

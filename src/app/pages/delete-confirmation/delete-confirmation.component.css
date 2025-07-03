@@ -1,0 +1,43 @@
+:host {
+    display: block;
+}
+
+mat-dialog-content p {
+    font-size: 1.25rem;
+    margin: 15px 20px;
+    color: #444;
+    font-weight: 500;
+    margin-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+mat-dialog-actions {
+    margin-top: 5px;
+}
+
+button {
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:first-child {
+    background-color: #339440;
+    color: white;
+    margin-right: 20px;
+}
+
+button:first-child:hover {
+    background-color: #114e10;
+}
+
+button:last-child {
+    background-color: #d32f2f;
+    color: white;
+}
+
+button:last-child:hover {
+    background-color: #b71c1c;
+}

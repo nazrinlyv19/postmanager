@@ -24,18 +24,11 @@
 
 
 <div class="all-posts">
-    <h2>All posts</h2>
+    <h1>All Posts</h1>
     <div class="posts-center">
         <ul>
-            <li *ngFor="let post of posts">
-                <strong>{{post.title}}</strong><br/>
-                <span>{{post.content}}</span><br/>
-                <small *ngIf="post.optionalData">{{post.optionalData}}</small>
-                <button (click)="onEdit(post)">Edit</button>
-                <button (click)="onDelete(post.id)">Delete</button>
-                <hr/>
-            </li>
+            <app-post *ngFor="let post of posts" [post]="post" (edit)="onEdit($event)" (delete)="onDelete($event)">
+            </app-post>
         </ul>
     </div>
-
 </div>

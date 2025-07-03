@@ -1,1 +1,11 @@
-<p>post works!</p>
+<div class="post-item">
+    <li>
+        <strong>{{ post.title }}</strong><br />
+        <span>{{ post.content }}</span><br />
+        <small *ngIf="post.optionalData">{{ post.optionalData }}</small><br />
+
+        <button class="edt-btn" (click)="onEditClick()">EDIT</button>
+        <button class="dlt-btn" (click)="onDeleteClick()">DELETE</button>
+        <hr />
+    </li>
+</div>

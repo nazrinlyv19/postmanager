@@ -1,10 +1,8 @@
-<h2 mat-dialog-title>Are you sure you want to delete?</h2>
-
 <mat-dialog-content>
     <p>Do you really want to delete the post titled {{ data.title }}?</p>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
     <button mat-button (click)="onCancel()">No</button>
-    <button mat-button color="warn" (click)="onConfirm()">Yes, Delete</button>
+    <button mat-button (click)="onConfirm()">Yes, Delete</button>
 </mat-dialog-actions>

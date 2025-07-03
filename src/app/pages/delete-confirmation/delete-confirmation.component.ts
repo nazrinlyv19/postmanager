@@ -14,7 +14,9 @@ export class DeleteConfirmationComponent {
   constructor(
     public dialogRef: MatDialogRef<DeleteConfirmationComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { title: string }
-  ) {console.log(this.data);}
+  ) {
+    console.log(this.data);
+  }
 
   onCancel(): void{
     this.dialogRef.close(false);

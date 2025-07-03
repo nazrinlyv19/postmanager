@@ -10,16 +10,18 @@ import {
 import { Post } from './models/post.model';
 import { PostService } from './services/post.service';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { EditPostComponent } from './edit-post/edit-post.component';
+import { EditPostComponent } from './pages/edit-post/edit-post.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
+
+import { DeleteConfirmationComponent } from './pages/delete-confirmation/delete-confirmation.component';
+import { PostComponent } from './pages/post/post.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,CommonModule,MatDialogModule,EditPostComponent,MatIconModule,MatButtonModule,DeleteConfirmationComponent],
+  imports: [FormsModule, ReactiveFormsModule,CommonModule,MatDialogModule,EditPostComponent,MatIconModule,MatButtonModule,DeleteConfirmationComponent,PostComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -48,14 +50,15 @@ onSubmit(){
 get posts():Post[] {
   return this.postService.getPosts();
 }
-onDelete(id: number) {
+onDelete(post: Post) {
+  console.log(post)
   const dialogRef = this.dialog.open(DeleteConfirmationComponent, {
-    data: { message: 'Are you sure you want to delete this post?' },
+    data: { title: post.title },
   });
 
   dialogRef.afterClosed().subscribe((confirmed: boolean) => {
     if (confirmed) {
-      this.postService.deletePost(id);
+      this.postService.deletePost(post.id);
     }
   });
 }
