@@ -1,78 +1,41 @@
-<!-- <div class="form-center">
-    <h2>user form</h2>
-    <form [formGroup]="userForm" (ngSubmit)="onSubmitR()">
-        <input type="text" placeholder="Name" formControlName="fName">
-        <div class="alert">
-            @if (userForm.get('fName')?.touched && userForm.get('fName')?.invalid) { @if (userForm.get('fName')?.hasError('required')) {
-            <p>name cannot be empty</p>} @if (userForm.get('fName')?.hasError('minlength')) {} }
+<div class="form-center">
+    <h2>Add new post</h2>
 
-            <p>name must be atleast 3 characters long</p>
-
-        </div>
-        <br><br>
-        <input type="text" placeholder="Email" formControlName="email">
-        <div class="alert">
-            @if (userForm.get('email')?.touched && userForm.get('email')?.invalid) { @if (userForm.get('email')?.hasError('required')) {
-            <p>email is required</p>
-            } @if (userForm.get('email')?.hasError('email')) {
-            <p>please enter a valid eail</p>
-            } }
-        </div>
-        <br><br>
-        <div formGroupName="address">
-            <textarea formControlName="street"></textarea>
-            <div class="alert">
-                @if (userForm.get('address.street')?.touched && userForm.get('address.street')?.invalid) { @if (userForm.get('address.street')?.hasError('required')) {
-                <p>address is required</p>
-                } @if (userForm.get('address.street')?.hasError('minlength')) {
-                <p>address must be atleast 10 characters long </p>
-                } }
-            </div>
-            <br><br>
-            <input type="text" placeholder="City" formControlName="city">
-            <div class="alert">
-                @if (userForm.get('address.city')?.touched && userForm.get('address.city')?.invalid) { @if (userForm.get('address.city')?.hasError('required')) {
-                <p>city is required</p>
-                } @if (userForm.get('address.city')?.hasError('minlength')) {
-                <p>city must be atleast 3 characters long </p>
-                } }
-            </div>
-            <br><br>
-            <input type="text" placeholder="Zip code" formControlName="zipCode">
-            <div class="alert">
-                @if (userForm.get('address.zipCode')?.touched && userForm.get('address.zipCode')?.invalid) { @if (userForm.get('address.zipCode')?.hasError('required')) {
-                <p>zip code is required</p>
-                } @if (userForm.get('address.zipCode')?.hasError('minlength')) {
-                <p>zip code must be atleast 3 characters long </p>
-                } }
-            </div>
-            <br><br>
-            <input type="text" placeholder="Country" formControlName="country">
-            <div class="alert">
-                @if (userForm.get('address.country')?.touched && userForm.get('address.country')?.invalid) { @if (userForm.get('address.country')?.hasError('required')) {
-                <p>country is required</p>
-                } @if (userForm.get('address.country')?.hasError('minlength')) {
-                <p>country must be atleast 3 characters long </p>
-                } }
-            </div>
-            <br><br></div>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
 
+        <label for="">Title:</label>
+        <input type="text" formControlName="title" placeholder="enter the title">
+        <br><br/>
 
+        <label for="">Content:</label>
+        <textarea formControlName="content" placeholder="enter the content"></textarea>
+        <br><br/>
 
-        <label for="">hobbies</label>
-        <br><br>
-        <input type="text" placeholder="hobbies" #hobbyInput (keyup.enter)="addHobby(hobbyInput.value)">
-        <br><br>
+        <label for="">Optional Data:</label>
+        <input type="text" formControlName="optionalData" placeholder="enter optional data">
+        <br><br/>
 
-        <ul>
-            @for (hobby of hobbiesArray.controls; track hobby) {
-            <li>{{hobby.value}}</li>
-            }
+        <button type="submit" [disabled]="postForm.invalid">SUBMIT</button>
 
-        </ul>
-
-        <button>Submit</button>
     </form>
+</div>
 
-</div> -->
+
+
+<div class="all-posts">
+    <h2>All posts</h2>
+    <div class="posts-center">
+        <ul>
+            <li *ngFor="let post of posts">
+                <strong>{{post.title}}</strong><br/>
+                <span>{{post.content}}</span><br/>
+                <small *ngIf="post.optionalData">{{post.optionalData}}</small>
+                <button (click)="onEdit(post)">Edit</button>
+                <button (click)="onDelete(post.id)">Delete</button>
+                <hr/>
+            </li>
+        </ul>
+    </div>
+
+</div>

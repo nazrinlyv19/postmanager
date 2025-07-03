@@ -1,31 +1,25 @@
-h1 {
-    color: navy;
-}
-
-.active {
-    border: 4px solid yellow;
-    background-color: green;
-}
-
-.notactive {
-    background-color: red;
-    border: 4px solid blue;
-}
-
-.apple {
-    background-color: red;
-    border: 4px solid green;
-}
-
 .form-center {
     margin: 0 auto;
-    width: 250px;
+    width: 300px;
 }
 
-.alert {
-    color: red;
+h2 {
+    color: navy;
+    text-align: center;
+    margin: 40px;
 }
 
-input.ng-invalid {
-    border: 2px solid red;
+input,
+textarea {
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+}
+
+label {
+    margin-left: 20px;
+}
+
+.all-posts {
+    margin: 20px auto;
 }
